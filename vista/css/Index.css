@@ -1,0 +1,483 @@
+/* HTML SISTEMA DE INVENTARIOS */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+h3 {
+    margin: 0;
+}
+
+
+html {
+    height: 100%;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;  
+    min-height: 100%;
+    background-color: rgba(255, 255, 255, 0.911);
+    display: flex;
+    flex-direction: column;
+    min-height: 100hv;
+ }
+
+ 
+ 
+/* header */
+
+.imagen_barraNavegacion {
+    display: flex;
+    background-color: white;
+}
+
+.logoiNV-head {
+    width: 190px;
+    padding-left: 5px;
+    display: flex;
+    justify-content: left;
+}
+
+.barraNavegacion_bloque_bienvenida_usuario {
+    background-color: #E63615;
+    background-image: linear-gradient(#f74c2e, #df3112 60%, #E63615);
+    height: 90px;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.bloque_bienvenida_usuario{
+    padding-left: 850px;
+    color: white;
+}
+
+
+.bloque_bienvenida_usuario a{
+    color: white;
+    text-decoration: none;
+}
+
+.bloque_bienvenida_usuario a:hover{
+    color: gray;
+}
+
+
+
+
+
+/* START main */
+
+/* BARRA LATERAL */
+.container{       
+    background: rgba(255, 255, 255, 0.911);
+    margin: 5px; 
+    margin-bottom: 0px;
+    padding: 40px 50px 20px 40px;   
+}
+
+.container .content{
+    display: flex;
+}
+
+.container .content .list{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 29%;
+    margin-right: 150px;
+}
+
+.content .list label{
+    height: 60px;   
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 60px;
+    cursor: pointer;
+    padding-left: 25px;
+    color: #333;
+    z-index: 12;
+    transition: all 0.4s ease;
+}
+
+.content .list label:hover{
+    color: #E63615;
+}
+
+#Agregar-material:checked ~ .list .Agregar-material,
+#Busqueda-material:checked ~ .list .Busqueda-material,
+#Reportes-material:checked ~ .list .Reportes-material{
+    color: white;
+}
+
+.content .indicator{
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #E63615; 
+    background-image: linear-gradient(#f74c2e, #df3112 60%, #E63615);
+    transition: all 0.4s ease;
+}
+
+
+#Agregar-material:checked ~ .list .indicator{
+    top: 0;
+}
+
+
+#Busqueda-material:checked ~ .list .indicator{
+    top: 60px;
+}
+
+#Reportes-material:checked ~ .list .indicator{
+    top: 120px;
+}
+
+.container input[type="radio"]{
+    display: none;
+}
+
+.container .content .text-content{
+    width: 80%;
+    height: 100%;
+} 
+
+
+
+
+
+/* FORMULARIO DETALLES MATERIAL */
+
+/* SUB TAB DE NAVEGACION MATERIAL-SUBIR IMAGEN */
+/* CSS for the main interaction */
+
+.tabset > input[type="radio"] {
+    position: absolute;
+    left: -200vw;
+  }
+  
+  .tabset .tab-panel {
+    display: none;
+  }
+  
+  .tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+  .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+  .tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+  .tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+  .tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+  .tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+    display: block;
+  }
+  
+  /* Estilos */
+  
+  .tabset > label {
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px 25px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .tabset > label::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    width: 22px;
+    height: 4px;
+    background: #8d8d8d;
+  }
+  
+  .tabset > label:hover,
+  .tabset > input:focus + label {
+    color:#E63615
+  }
+  
+  .tabset > label:hover::after,
+  .tabset > input:focus + label::after,
+  .tabset > input:checked + label::after {
+    background:#E63615
+  }
+  
+  .tabset > input:checked + label {
+    border-color: #ccc;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+  }
+  
+  .tab-panel {
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+    font-weight: 500;
+  }
+
+  .requiredIcon{
+    color: red;
+  }
+  
+
+  
+
+/* FORMULARIO MATERIAL */
+
+.content .text-content .title-text-content{
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+
+.container .content .text-content .tab-panel{
+    padding-top: 8px;
+}
+
+
+
+/* GRUPO5 FORMULARIO */
+.container .content .text-content .form-group5{
+    padding-top: 10px;
+    padding-bottom: 24px;
+    
+}
+
+.container .content .text-content .form-group5 .Solo_agregar_conceptos_de_materiales_nuevos{
+    color: #ff0008;
+    text-decoration: none;
+}
+
+.container .content .text-content .form-group5 .CREADO_hp{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.container .content .text-content .form-group5 .Búsqueda_hp{
+    text-decoration: none;
+}
+
+
+/* GRUPO1 FORMULARIO */
+.container .content .text-content .form-group1{
+    font-size: 18px;
+    display: flex;
+    margin-bottom: 10px;  
+}
+
+.container .content .text-content .form-group1 input {
+    width: 300px;
+    height: 30px; 
+    margin-right: 20px; 
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+}
+
+
+
+
+/* GRUPO2 FORMULARIO */
+.container .content .text-content .form-group2{
+    font-size: 18px;
+}
+
+.container .content .text-content .form-group2 input {
+    width: 620px;
+    height: 30px;
+    margin-bottom: 20px;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+}
+
+.container .content .text-content .form-group2 textarea {
+    width: 620px;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+}
+
+
+
+
+
+/* GRUPO3 FORMULARIO */
+.container .content .text-content .form-group3{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.container .content .text-content .form-group3 textarea {
+    width: 620px;
+    height: 140px;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+}
+
+
+
+
+/* GRUPO4 FORMULARIO */
+.container .content .text-content .form-group4{
+    font-size: 18px;
+    display: flex;
+    margin-bottom: 32px;  
+}
+
+.container .content .text-content .form-group4 input{
+    width: 180px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+}
+
+.container .content .text-content .form-group4 select{
+    width: 180px;
+    height: 30px;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+}
+
+
+.container .content .text-content .form-group4 .date_input_form-group4{
+    margin-left: 10px;
+}
+
+.container .content .text-content .form-group4 .text_date_input_form-group4{
+    padding-left: 10px;
+    width: 240px;
+}
+
+.container .content .text-content .form-group4 .text_cantidad_input_form-group4{
+    padding-left: 10px;
+}
+
+
+
+
+/* BOTONES - AGREGAR MATERIAL - LIMPIAR */
+.container .content .text-content .form-group1-botton .botton-agregarMaterial{  
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    background-image: linear-gradient(#88c149, #73A839 60%, #699934);
+    color: white;
+    background-color: #73A839;
+    border-color: #73A839;
+}
+
+.container .content .text-content .form-group1-botton .botton-Limpiar{
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    vertical-align: middle;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+}
+
+
+
+/* FORMULARIO SUBIR IMAGEN */
+.container .content .text-content .form-group1-files input{
+    color: white;
+    background-image: linear-gradient(#464e57, #343a40 60%, #2b3035);
+    background-color: #343a40;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 400px;
+    padding-left: 20px;
+    border-radius: 0.25rem;
+}
+
+.container .content .text-content .form-group1-files span{
+    color: #2FA4E7;
+}
+
+
+.container .content .text-content .form-group2-botton .deleteUploadImageFile{
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    background-image: linear-gradient(#e12b31, #C71C22 60%, #b5191f);
+    color: white;
+    background-color: #C71C22;
+    border-color: #C71C22;
+}
+
+
+.container .content .text-content .form-group2-botton .cleanUploadImageFile{
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    vertical-align: middle;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem; 
+}
+
+/* END main */
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+
+.logoenelwhite_footer{
+    width: 57px;
+    margin-right: 2px;
+    margin-bottom: 5px;
+    
+}
+    
+.footer-page p{
+    font-weight: bold;
+}
+
+
+.footer-page {
+    background-color: #E63615;
+    background-image: linear-gradient(#f74c2e, #df3112 60%, #E63615);
+    padding: 1em 0;
+    text-align: center;
+    margin-top: auto; 
+    color: white; 
+}
+
+.footer-page a{
+    color: white;
+    text-decoration: none;
+}
+
+.footer-page a:hover{
+    color: gray;
+}
+
+/* footer */
+
+    
+
+
